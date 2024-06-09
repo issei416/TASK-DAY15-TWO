@@ -19,3 +19,7 @@ input,textarea {
 label {
     font-size:1.3rem;
 }
+
+.tabelbody:nth-child(2n){
+    background-color: rgb(139, 129, 129);
+}

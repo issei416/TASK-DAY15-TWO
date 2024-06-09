@@ -14,58 +14,58 @@
     <h1 id="title">FORM</h1>
     <p id="description">FORM submition and updation usoing DOM</p>
     <main class="col-12">
-        <form action="submit" id="form"
+        <form id="form"
             class="container p-3 col-6 d-flex flex-column justify-content-center align-items-center border border-dark">
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="first-name">First Name</label>
-                <input class="col-8" type="name" id="first-name" required placeholder="First-name">
+                <input class="col-8" name="firstname" type="name" id="first-name" required placeholder="First-name">
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="last-name">Last Name</label>
-                <input class="col-8" type="name" id="last-name" required placeholder="Last-name">
+                <input class="col-8" name="lastname" type="name" id="last-name" required placeholder="Last-name">
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="email">Email</label>
-                <input class="col-8" type="email" id="email" required placeholder="email">
+                <input class="col-8" name="email" type="email" id="email" required placeholder="email">
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="address">Address</label>
-                <textarea class="col-8" type="text" id="address" placeholder="your address"></textarea>
+                <textarea class="col-8" name="address" type="text" id="address" placeholder="your address"></textarea>
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="pincode">Pincode</label>
-                <input class="col-8" type="text" id="pincode" required placeholder="pincode">
+                <input class="col-8" name="pincode" type="text" id="pincode" required placeholder="pincode">
             </div>
 
             <div class="form-group d-flex col-12">
                 <label for="gender" class="col-4 text-end px-3">Gender</label>
                 <div class="col-8">
-                    <input class="me-2" type="radio" name="gender" id="male">male
-                    <input class="ms-4 me-2" type="radio" name="gender" id="female">Female
-                    <input class="ms-4 me-2" type="radio" name="gender" id="other">Other
+                    <input class="me-2" value="male" type="radio" name="gender" id="gender">male
+                    <input class="ms-4 me-2"  value="female" type="radio" name="gender" id="gender">Female
+                    <input class="ms-4 me-2" value="other" type="radio" name="gender" id="gender">Other
                 </div>
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end pe-3" for="food">Your favourite foods <span class="fs-6 text-muted">(select minimum 3)</span></label>
                 <div class="col-8">
-                    <input class="me-2" type="checkbox" name="Biriyani">Biriyani
-                    <input class="ms-4 me-2" type="checkbox" name="Parotta">Parotta
-                    <input class="ms-4 me-2" type="checkbox" name="Veg Rice">Veg Rice
-                    <input class="ms-4 me-2" type="checkbox" name="Pongal">Pongal
-                    <input class="ms-4 me-2" type="checkbox" name="Dosa">Dosa
+                    <input class="checkbox me-2" type="checkbox" value="Biriyani" name="Biriyani">Biriyani
+                    <input class="checkbox ms-4 me-2" type="checkbox" value="Parota" name="Parotta">Parotta
+                    <input class="checkbox ms-4 me-2" type="checkbox" value="Veg rice" name="Veg Rice">Veg Rice
+                    <input class="checkbox ms-4 me-2" type="checkbox" value="Pongal" name="Pongal">Pongal
+                    <input class="checkbox ms-4 me-2" type="checkbox" value="Dosa" name="Dosa">Dosa
                 </div>
             </div>
 
             <div class="form-group col-12">
                 <label class="col-4 text-end px-3" for="state">State</label>
                 <select name="state" class="col-8" id="state">
-                    <option value=""></option>
+                    <option value="" default></option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                     <option value="TAmil nadu">Tamil nadu</option>
@@ -87,7 +87,7 @@
             <button type="submit" class="btn btn-primary my-3" id="submit">Submit</button>
         </form>
 
-        <table class="table col-12 border border-dark rounded my-5">
+        <table class="table col-12 border border-dark rounded my-5" id="table">
             <thead>
                 <th>FIRST NAME</th>
                 <th>LAST NAME</th>
@@ -99,8 +99,8 @@
                 <th>STATE</th>
                 <th>COUNTRY</th>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id="tablebody">
+                <!-- <tr>
                     <td>Mukesh</td>
                     <td>Khanna</td>
                     <td>mukesh@gmail.com</td>
@@ -110,21 +110,11 @@
                     <td>biriyani,parotta,dosa</td>
                     <td>Tamil nadu</td>
                     <td>India</td>
-                </tr>
-                <tr>
-                    <td>Mukesh</td>
-                    <td>Khanna</td>
-                    <td>mukesh@gmail.com</td>
-                    <td>male</td>
-                    <td>104,namakkal</td>
-                    <td>637408</td>
-                    <td>biriyani,parotta,dosa</td>
-                    <td>Tamil nadu</td>
-                    <td>India</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </main>
+    <script src="script/script.js"></script>
     <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
