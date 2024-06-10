@@ -7,20 +7,6 @@ let bool = 1;
 
 form.addEventListener('submit',(e) => {
     e.preventDefault();
-
-    // let formdata = new FormData(form);  ----->how can i make this work?<-----
-    // let data = formdata.entries().toArray();
-    // let tr = document.createElement("tr");
-    // let [name,email,pincode] = data;
-    // console.log(name,email,pincode);
-    // for(let arr of data){
-    //     let data_value = arr[1];
-    //     let td = document.createElement("td");
-    //     td.textContent = data_value;
-    //     tr.appendChild(td);
-    // // }
-    // let table = document.querySelector("#table");
-    // table.appendChild(tr);
     
     let td_array = [];
 
@@ -34,15 +20,25 @@ form.addEventListener('submit',(e) => {
     td_array.push(email.value);
 
     let gender = document.querySelector("#gender:checked");
-    td_array.push(gender.value); 
+    if(gender!==null){
+        td_array.push(gender.value); 
+    }
+    else{
+        td_array.push("-"); 
+    }
 
     let address = document.querySelector("#address");
-    td_array.push(address.value);
+    if(address.value){
+        td_array.push(address.value);
+    }
+    else{
+        td_array.push("-")
+    }
 
     let pincode = document.querySelector("#pincode");
     if(!Number.isInteger(Number(pincode.value))){
         window.alert("Enter a valid pincode");
-        return; //is return correct?
+        return; 
     }else{
         td_array.push(pincode.value);
     }
@@ -60,10 +56,20 @@ form.addEventListener('submit',(e) => {
     }
 
     let state = document.querySelector("#state");
-    td_array.push(state.value);
+    if(state.value){
+        td_array.push(state.value);
+    }
+    else{
+        td_array.push("-");
+    }
 
     let country = document.querySelector("#country");
-    td_array.push(country.value);
+    if(country.value){
+        td_array.push(country.value);
+    }
+    else{
+        td_array.push("-");
+    }
 
     console.log(td_array);
 
@@ -73,16 +79,13 @@ form.addEventListener('submit',(e) => {
     for(data of td_array){
         let td = document.createElement("td");
         td.textContent = data;
+        if(!bool){
+            td.style.backgroundColor = 'rgba(13,110,253,0.6)';
+        }
         tr.appendChild(td);
     }
 
-    if (bool == 1) {
-        tr.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-        bool = 0;
-    } else {
-        tr.style.backgroundColor = "rgba(225, 225, 225, 0.8)";
-        bool = 1;
-    }
+    bool = !bool;
 
     tablebody.appendChild(tr);
 
