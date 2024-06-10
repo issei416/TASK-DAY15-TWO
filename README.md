@@ -22,3 +22,5 @@ first nmae, last name, emial, pincode are required fields
 Upon submitting the form the form data is collected and appended to a Table which is displayed below the form.  
 The empty fields in the form is recognized as "-" and appended in table.
 
+To view the deployed site [click here](https://form-dom-dev-it.netlify.app)
+
